@@ -1,27 +1,14 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import HeroCarousel from '@components/sections/home/HeroCarousel';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div className="relative" style={{ zIndex: 10 }}>
-      {/* Banner Hero */}
-      <section className="bg-[color:var(--color-primary)] text-white py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              O Programa DNA do Brasil
-            </h1>
-            <p className="text-xl mb-8">
-              Acreditamos na força da educação e do esporte para transformar vidas.
-              Atuamos diretamente com escolas públicas e comunidades, desenvolvendo talentos e ampliando possibilidades.
-            </p>
-            <Link to="/quem-somos" className="bg-white text-[color:var(--color-primary)] px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition">
-              Saiba Mais
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
-      {/* Espaço para os Banners */}
+      {/* Seção de Iniciativas */}
       <section className="py-12">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-12">Conheça Nossas Iniciativas</h2>

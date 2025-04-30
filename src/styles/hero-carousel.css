@@ -1,0 +1,140 @@
+/* hero-carousel.css */
+/* Animações */
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 1.2s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Estilos do botão hero */
+  .hero-button {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Efeito de preenchimento no hover */
+  .hero-button span.absolute {
+    z-index: -1;
+  }
+  
+  /* Customização das setas de navegação */
+  .hero-carousel .swiper-button-next::after,
+  .hero-carousel .swiper-button-prev::after {
+    font-size: 24px !important;
+    color: white;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .hero-carousel .swiper-button-next:hover::after,
+  .hero-carousel .swiper-button-prev:hover::after {
+    opacity: 1;
+  }
+  
+  .hero-carousel .swiper-button-next,
+  .hero-carousel .swiper-button-prev {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-carousel .swiper-button-next:hover,
+  .hero-carousel .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Customização da paginação */
+  .hero-carousel .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    bottom: 24px !important;
+  }
+  
+  .hero-carousel .swiper-pagination-bullet {
+    width: 30px !important;
+    height: 4px !important;
+    border-radius: 2px !important;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    margin: 0 !important;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-carousel .swiper-pagination-bullet-active {
+    background-color: white !important;
+    width: 50px !important;
+  }
+  
+  /* Melhorias de desempenho */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    .hero-carousel .swiper-pagination-bullet {
+      width: 20px !important;
+    }
+    
+    .hero-carousel .swiper-pagination-bullet-active {
+      width: 30px !important;
+    }
+    
+    .hero-carousel .swiper-button-next,
+    .hero-carousel .swiper-button-prev {
+      width: 30px !important;
+      height: 30px !important;
+    }
+    
+    .hero-carousel .swiper-button-next::after,
+    .hero-carousel .swiper-button-prev::after {
+      font-size: 18px !important;
+    }
+    
+    .hero-button {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.875rem;
+    }
+  }
