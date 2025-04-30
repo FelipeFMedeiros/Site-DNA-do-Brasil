@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import MobileMenu from './MobileMenu';
 
-const Header = () => {
+const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProgramOpen, setIsProgramOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -276,4 +276,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Menu;
