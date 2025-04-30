@@ -2,7 +2,7 @@ import React from 'react';
 
 // Importação dos componentes
 import HeroCarousel from '@components/sections/home/HeroCarousel';
-import ProgramDnaBrasil from '@components/sections/home/ProgramDnaBrasil';
+import ProgramaDnaBrasil from '@/components/sections/home/ProgramaDnaBrasil';
 
 const Home: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
       <HeroCarousel />
 
       {/* O Programa DNA do Brasil */}
-      <ProgramDnaBrasil />
+      <ProgramaDnaBrasil />
     </div>
   );
 };

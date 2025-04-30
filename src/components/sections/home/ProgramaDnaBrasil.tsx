@@ -12,7 +12,7 @@ import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
 // Importação dos estilos
 import '@styles/program-dna.css';
 
-const ProgramDnaBrasil: React.FC = () => {
+const ProgramaDnaBrasil: React.FC = () => {
   // Variantes de animação para o container
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -239,4 +239,4 @@ const ProgramDnaBrasil: React.FC = () => {
   );
 };
 
-export default ProgramDnaBrasil;
+export default ProgramaDnaBrasil;
