@@ -1,73 +1,211 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+// Importações do Material UI Icons
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PhoneIcon from '@mui/icons-material/Phone';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import EmailIcon from '@mui/icons-material/Email';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import DescriptionIcon from '@mui/icons-material/Description';
+import BusinessIcon from '@mui/icons-material/Business';
+import GroupsIcon from '@mui/icons-material/Groups';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import PersonIcon from '@mui/icons-material/Person';
 
 const Footer = () => {
+  const [year, setYear] = useState(new Date().getFullYear());
+  
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
-    <footer className="bg-gray-800 text-white relative" style={{ zIndex: 10 }}>
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">DNA do Brasil</h3>
-            <p className="mb-4">Transformando vidas através da educação e do esporte.</p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-gray-300">
-                <span className="sr-only">Facebook</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <a href="#" className="text-white hover:text-gray-300">
-                <span className="sr-only">Instagram</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <a href="#" className="text-white hover:text-gray-300">
-                <span className="sr-only">Twitter</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-              </a>
-              <a href="#" className="text-white hover:text-gray-300">
-                <span className="sr-only">YouTube</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
-                </svg>
-              </a>
+    <footer className="bg-gray-100 text-gray-700 pt-16 pb-8 relative">
+      {/* Decorative Wave */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <svg className="h-6 w-full text-white" preserveAspectRatio="none" viewBox="0 0 1440 48">
+          <path 
+            fill="currentColor" 
+            d="M0,48 C240,16 480,32 720,32 C960,32 1200,16 1440,48 L1440,0 L0,0 Z"
+          ></path>
+        </svg>
+      </div>
+      
+      {/* Container principal com mais espaço nas laterais para desktop */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 2xl:px-16">
+        {/* Grid de 2 colunas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+
+          {/* Coluna 1: Informações e Redes Sociais */}
+          <div className="md:pr-4">
+            <div className="mb-8">
+              <div className="flex justify-center md:justify-start">
+                <img 
+                  src="/images/logos/logo-dna-2.png" 
+                  alt="DNA do Brasil" 
+                  className="h-24 md:h-28 mb-6"
+                />
+              </div>
+              
+              <div className="flex flex-col space-y-4 mt-8">
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                    <LocationOnIcon fontSize="small" />
+                  </div>
+                  <span className="ml-4 text-sm leading-tight">
+                    SCES Trecho 2 - Conjunto 1 - Lote 10 Clube Asseb - Asa Sul, Brasília – DF
+                  </span>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                    <PhoneIcon fontSize="small" />
+                  </div>
+                  <span className="ml-4 text-sm">+55 (61) 3386-7087</span>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                    <SmartphoneIcon fontSize="small" />
+                  </div>
+                  <span className="ml-4 text-sm">+55 (61) 98625-8065</span>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                    <EmailIcon fontSize="small" />
+                  </div>
+                  <span className="ml-4 text-sm">contato@idecace.org.br</span>
+                </div>
+              </div>
+              
+              <div className="mt-10 flex justify-center md:justify-start space-x-5">
+                <a 
+                  href="https://www.instagram.com/institutoidecace/" 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-sm"
+                >
+                  <InstagramIcon />
+                </a>
+                <a 
+                  href="https://www.facebook.com/idecace/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-sm"
+                >
+                  <FacebookIcon />
+                </a>
+                <a 
+                  href="https://www.youtube.com/channel/UCxoZjSX8ZFMX6t1b9nXjtZA" 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-sm"
+                >
+                  <YouTubeIcon />
+                </a>
+                <a 
+                  href="#" 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-sm"
+                >
+                  <LinkedInIcon />
+                </a>
+              </div>
             </div>
           </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">O Programa</h3>
-            <ul className="space-y-2">
-              <li><Link to="/quem-somos" className="hover:text-gray-300">Quem Somos</Link></li>
-              <li><Link to="/metodologia" className="hover:text-gray-300">Metodologia</Link></li>
-              <li><Link to="/plataforma" className="hover:text-gray-300">Plataforma DNA do Brasil</Link></li>
-              <li><Link to="/carteira-estudante" className="hover:text-gray-300">Carteira do Estudante</Link></li>
+
+          {/* Coluna 2: Serviços e Frase do Presidente */}
+          <div className="md:px-4">
+            <h3 className="text-2xl font-bold mb-8 text-gray-900 relative inline-block">
+              Serviços
+              <span className="absolute bottom-0 left-0 w-2/3 h-1 bg-blue-500"></span>
+            </h3>
+            <ul className="space-y-5">
+              <li className="flex items-center group">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <DescriptionIcon fontSize="small" />
+                </div>
+                <Link to="#" className="ml-4 text-base text-gray-700 hover:text-blue-600 transition-colors group-hover:translate-x-1 transform duration-300">
+                  Avaliação do aluno
+                </Link>
+              </li>
+              <li className="flex items-center group">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <BusinessIcon fontSize="small" />
+                </div>
+                <Link to="#" className="ml-4 text-base text-gray-700 hover:text-blue-600 transition-colors group-hover:translate-x-1 transform duration-300">
+                  Especialização de profissional
+                </Link>
+              </li>
+              <li className="flex items-center group">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <GroupsIcon fontSize="small" />
+                </div>
+                <Link to="#" className="ml-4 text-base text-gray-700 hover:text-blue-600 transition-colors group-hover:translate-x-1 transform duration-300">
+                  Cadastro de parceria
+                </Link>
+              </li>
             </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Parceiros</h3>
-            <ul className="space-y-2">
-              <li><Link to="/empresa-parceira" className="hover:text-gray-300">Empresa Parceira da Escola</Link></li>
-              <li><a href="#" className="hover:text-gray-300">Federações</a></li>
-              <li><a href="#" className="hover:text-gray-300">Clubes</a></li>
-              <li><a href="#" className="hover:text-gray-300">Universidades</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contato</h3>
-            <ul className="space-y-2">
-              <li>contato@dnadobrasil.com.br</li>
-              <li>(XX) XXXX-XXXX</li>
-              <li>Endereço, Cidade - Estado</li>
-            </ul>
+            
+            {/* Frase do Presidente - Ícone de aspas aumentado */}
+            <div className="mt-12 bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500 relative">
+              <div className="absolute -top-6 -left-4 text-blue-100 transform -rotate-12">
+                <FormatQuoteIcon style={{ fontSize: '4.5rem' }} /> {/* Tamanho aumentado */}
+              </div>
+              <p className="text-gray-700 relative z-10 text-base italic leading-relaxed">
+                Existe um trabalho muito maior do que detectar que é encaminhar, que é acompanhar, e isso só se faz a través do professor e com entendimento e a participação da família. Para isso trabalhamos.
+              </p>
+              <div className="mt-5 flex items-center">
+                <div className="flex-shrink-0 border-2 border-blue-500 rounded-full overflow-hidden w-12 h-12 bg-gray-100 flex items-center justify-center text-blue-500 shadow-sm">
+                  <PersonIcon />
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-base font-bold text-gray-800">Wilson Cardoso</h4>
+                  <p className="text-sm text-gray-500">Presidente IDECACE</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center">
-          <p>&copy; {new Date().getFullYear()} DNA do Brasil. Todos os direitos reservados.</p>
+        {/* Container centralizado entre as duas colunas - Movido para fora do grid */}
+        <div className="flex justify-center mt-16">
+          <div className="flex flex-col items-center max-w-md">
+            {/* Logo IDECACE - Centralizado */}
+            <div className="mb-8">
+              <img 
+                src="/images/logos/idecace.png" 
+                alt="IDECACE" 
+                className="h-20 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" 
+              />
+            </div>
+            
+            {/* Decorative pattern - Centralizado */}
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-100 to-blue-50 p-6 shadow-md w-full">
+              <div className="relative z-10 text-center">
+                <h4 className="text-lg font-semibold text-blue-800 mb-3">DNA do Brasil</h4>
+                <p className="text-base text-blue-700 opacity-90">Transformando vidas através da educação e do esporte</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Copyright */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-base text-gray-500">&copy; {year} <span className="text-blue-600 font-medium">DNA DO BRASIL</span>. Todos os direitos reservados.</p>
+            <div className="mt-6 md:mt-0">
+              <ul className="flex flex-wrap justify-center md:justify-end space-x-8 text-sm">
+                <li><Link to="/politica-de-privacidade" className="text-gray-500 hover:text-blue-600 transition-colors">Política de Privacidade</Link></li>
+                <li><Link to="/termos-de-uso" className="text-gray-500 hover:text-blue-600 transition-colors">Termos de Uso</Link></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

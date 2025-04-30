@@ -9,6 +9,7 @@ import PlataformaDna from './pages/PlataformaDna';
 import CarteiraEstudante from './pages/CarteiraEstudante';
 import EmpresaParceira from './pages/EmpresaParceira';
 import PosGraduacao from './pages/PosGraduacao';
+import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: 'pos-graduacao', element: <PosGraduacao /> },
     ],
   },
+  { path: '*', element: <NotFound /> },
 ]);
 
 export default router;

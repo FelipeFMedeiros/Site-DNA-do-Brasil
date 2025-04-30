@@ -70,7 +70,7 @@ const Header = () => {
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
                         <Link to="/" className="flex items-center">
-                            <img src="/images/logos/logo.png" alt="DNA do Brasil" className="h-10" />
+                            <img src="/images/logos/logo-dna.png" alt="DNA do Brasil" className="h-10" />
                         </Link>
 
                         {/* Menu desktop */}
