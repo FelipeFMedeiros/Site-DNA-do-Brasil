@@ -373,16 +373,14 @@ const Section5NiveisAprendizagem: React.FC = () => {
                         Nossa metodologia de avaliação contínua cria um ciclo virtuoso de diagnóstico, intervenção e
                         acompanhamento que fortalece toda a comunidade escolar.
                     </p>
-                    <motion.button
+                    <motion.a
                         className="px-8 py-3 bg-[#134074] text-white rounded-lg text-lg font-medium shadow-md hover:bg-[#0B2545] transition duration-200 hover:cursor-pointer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={() => {
-                            window.location.href = '/plataforma';
-                        }}
+                        href = '/plataforma'
                     >
                         Conheça nossa plataforma de avaliação
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
             </div>
         </section>

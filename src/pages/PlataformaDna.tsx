@@ -118,14 +118,14 @@ const PlataformaDNA: React.FC = () => {
                                 registrado, valorizado e transformado em oportunidade.
                             </p>
                             <div className="flex flex-wrap gap-4">
-                                <motion.button
+                                <motion.a
                                     className="px-6 py-3 bg-white text-[#134074] rounded-lg text-lg font-medium shadow-md hover:bg-gray-100 transition duration-200 hover:cursor-pointer"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.98 }}
-                                    onClick={() => (window.location.href = '/contato')}
+                                    href= '/contato'
                                 >
                                     Fale conosco
-                                </motion.button>
+                                </motion.a>
                             </div>
                         </motion.div>
 

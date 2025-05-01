@@ -155,13 +155,14 @@ const Tecnologia: React.FC = () => {
                         </p>
 
                         <div className="pt-6">
-                            <motion.button
+                            <motion.a
                                 className="px-6 py-3 bg-[#134074] text-white rounded-lg font-medium shadow-md hover:bg-[#0B2545] transition duration-200 hover:cursor-pointer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
+                                href='/plataforma'
                             >
                                 Conheça nossa plataforma
-                            </motion.button>
+                            </motion.a>
                         </div>
                     </motion.div>
 

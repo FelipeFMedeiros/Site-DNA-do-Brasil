@@ -261,13 +261,14 @@ const CursosEAD: React.FC = () => {
                             Nossos cursos são projetados para contribuir com o desenvolvimento integral, contemplando
                             desde habilidades técnicas até competências socioemocionais.
                         </p>
-                        <motion.button
+                        <motion.a
                             className="px-8 py-3 bg-[#134074] text-white rounded-lg text-lg font-medium shadow-md hover:bg-[#0B2545] transition duration-200 hover:cursor-pointer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.98 }}
+                            href='pos-graduacao'
                         >
                             Ver todos os cursos disponíveis
-                        </motion.button>
+                        </motion.a>
                     </div>
                 </motion.div>
             </div>
