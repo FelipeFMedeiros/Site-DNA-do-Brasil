@@ -9,6 +9,7 @@ import CarteiraEstudante from '@components/sections/home/CarteiraEstudante';
 import EmpresaParceira from '@components/sections/home/EmpersaParceira';
 import EspecialistaDnaBrasil from '@components/sections/home/EspecialistaDnaBrasil';
 import ResultadosImpactos from '@components/sections/home/ResultadosImpactos';
+import BeneficiosTalento from '@components/sections/home/BeneficiosTalento';
 
 const Home: React.FC = () => {
     return (
@@ -36,6 +37,9 @@ const Home: React.FC = () => {
 
             {/* Resultados e Impactos */}
             <ResultadosImpactos />
+
+            {/* Benefícios de ser um talento DNA do Brasil */}
+            <BeneficiosTalento />
         </div>
     );
 };
