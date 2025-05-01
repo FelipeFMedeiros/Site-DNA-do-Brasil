@@ -8,7 +8,7 @@ import ScrollToTop from '@hooks/ScrollToTop';
 
 const QuemSomos: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 overflow-x-hidden">
             {/* Hero Section - Modificado para tema azul */}
             <motion.div
                 className="relative bg-gradient-to-r from-[#0B2545] to-[#134074] text-white py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
@@ -36,7 +36,7 @@ const QuemSomos: React.FC = () => {
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <motion.h1
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mt-8"
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}

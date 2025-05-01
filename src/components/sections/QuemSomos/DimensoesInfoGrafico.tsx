@@ -163,9 +163,9 @@ const DimensoesInfoGrafico: React.FC = () => {
                     })}
                 </div>
 
-                {/* Versão responsiva para telas menores */}
-                <div className="md:hidden mt-16">
-                    <div className="grid grid-cols-2 gap-4">
+                {/* Descrição das dimensões */}
+                <div className="mt-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {dimensoes.map((dimensao) => (
                             <motion.div
                                 key={`mobile-${dimensao.id}`}
