@@ -8,6 +8,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PaletteIcon from '@mui/icons-material/Palette';
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 // Importação dos estilos
 import '@styles/program-dna.css';
@@ -45,7 +46,7 @@ const ProgramaDnaBrasil: React.FC = () => {
         tap: { scale: 0.95 },
     };
 
-    // Variantes de animação para os cards
+    // Variantes de animação para o card
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
@@ -59,6 +60,7 @@ const ProgramaDnaBrasil: React.FC = () => {
             transition: { type: 'spring', stiffness: 400, damping: 10 },
         },
     };
+
     // Array com os pilares do programa
     const pillars = [
         {
@@ -85,31 +87,6 @@ const ProgramaDnaBrasil: React.FC = () => {
             id: 5,
             name: 'Tecnologia',
             icon: <DeveloperBoardIcon className="w-10 h-10 text-[color:var(--color-primary)]" fontSize="large" />,
-        },
-    ];
-
-    // Array com os cards de CTA
-    const ctaCards = [
-        {
-            id: 1,
-            title: 'Avaliação Personalizada',
-            description: 'Descubra potenciais e crie trilhas de desenvolvimento exclusivas para cada aluno.',
-            link: '/avaliacao-personalizada',
-            ctaText: 'Saiba mais',
-        },
-        {
-            id: 2,
-            title: 'Formação de Professores',
-            description: 'Capacitação contínua e ferramentas pedagógicas para educadores transformarem a aprendizagem.',
-            link: '/formacao-professores',
-            ctaText: 'Conheça os cursos',
-        },
-        {
-            id: 3,
-            title: 'Encaminhamento Profissional',
-            description: 'Conectamos talentos a oportunidades reais no mercado de trabalho e no esporte.',
-            link: '/encaminhamento-profissional',
-            ctaText: 'Ver oportunidades',
         },
     ];
 
@@ -191,52 +168,51 @@ const ProgramaDnaBrasil: React.FC = () => {
                     ))}
                 </motion.div>
 
-                {/* Cards com CTA */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.1 }}
-                >
-                    {ctaCards.map((card, index) => (
-                        <motion.div
-                            key={card.id}
-                            className="bg-white rounded-lg shadow-md overflow-hidden"
-                            variants={cardVariants}
-                            whileHover="hover"
-                            custom={index}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <div className="p-6">
-                                <motion.h3
-                                    className="text-xl font-bold mb-3"
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ delay: 0.2 + index * 0.1 }}
+                {/* Card único com CTA */}
+                <div className="flex justify-center mt-12">
+                    <motion.div
+                        className="bg-white rounded-lg shadow-lg overflow-hidden max-w-2xl w-full"
+                        variants={cardVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        whileHover="hover"
+                        viewport={{ once: true, amount: 0.1 }}
+                    >
+                        <div className="p-8">
+                            <motion.h3
+                                className="text-2xl font-bold mb-4 text-[color:var(--color-primary)]"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                            >
+                                Conheça nosso programa completo
+                            </motion.h3>
+                            <motion.p
+                                className="mb-6 text-gray-600 text-lg"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ delay: 0.3 }}
+                            >
+                                Descubra como nossa metodologia integra avaliação personalizada, formação de professores
+                                e encaminhamento profissional para criar um ecossistema completo de desenvolvimento de
+                                talentos.
+                            </motion.p>
+                            <motion.div
+                                className="flex justify-center"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Link
+                                    to="/quem-somos"
+                                    className="inline-flex items-center px-6 py-3 bg-[color:var(--color-primary)] text-white rounded-md hover:bg-[color:var(--color-primary-dark)] transition text-lg font-medium"
                                 >
-                                    {card.title}
-                                </motion.h3>
-                                <motion.p
-                                    className="mb-4 text-gray-600"
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ delay: 0.3 + index * 0.1 }}
-                                >
-                                    {card.description}
-                                </motion.p>
-                                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                    <Link
-                                        to={card.link}
-                                        className="inline-block px-4 py-2 bg-[color:var(--color-primary)] text-white rounded-md hover:bg-[color:var(--color-primary-dark)] transition"
-                                    >
-                                        {card.ctaText}
-                                    </Link>
-                                </motion.div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                                    Saiba mais
+                                    <ArrowForwardIcon className="ml-2" />
+                                </Link>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
