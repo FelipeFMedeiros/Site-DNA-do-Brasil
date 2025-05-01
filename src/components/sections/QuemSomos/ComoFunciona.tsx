@@ -130,14 +130,14 @@ const ComoFunciona: React.FC = () => {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <motion.button
+                    <motion.a
                         className="px-8 py-3 bg-indigo-600 text-white rounded-lg text-lg font-medium shadow-md hover:bg-indigo-800 transition duration-200 hover:cursor-pointer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={() => (window.location.href = '/metodologia')}
+                        href='/metodologia'
                     >
                         Saiba mais sobre nossa metodologia
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
             </motion.div>
         </section>

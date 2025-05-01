@@ -1,17 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'
-
-// Importação dos ícones do MUI
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import EventAvailableIcon from '@mui/icons-material/EventAvailable';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 
-// Importação dos estilos
-import '@styles/carteira-estudante.css';
-
-const CarteiraEstudante: React.FC = () => {
+const CarteiraInterativa: React.FC = () => {
     // Estado para controlar qual lado da carteira está sendo exibido
     const [showFront, setShowFront] = useState(true);
     // Estado para controlar a animação de flip
@@ -98,51 +89,6 @@ const CarteiraEstudante: React.FC = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isFlipping, showFront]);
 
-    // Variantes de animação
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: { type: 'spring', damping: 25, stiffness: 200 },
-        },
-    };
-
-    // Dados dos cards de benefícios
-    const benefitCards = [
-        {
-            id: 1,
-            title: 'Descontos',
-            description: 'Acesse ofertas exclusivas em produtos e serviços parceiros.',
-            icon: <LocalOfferIcon style={{ fontSize: 36 }} />,
-            color: '#E74C3C',
-        },
-        {
-            id: 2,
-            title: 'Acesso a Eventos',
-            description: 'Participe de competições, palestras e experiências diferenciadas.',
-            icon: <EventAvailableIcon style={{ fontSize: 36 }} />,
-            color: '#3498DB',
-        },
-        {
-            id: 3,
-            title: 'Encaminhamento Profissional',
-            description: 'Conecte-se com empresas e instituições de ensino superior.',
-            icon: <BusinessCenterIcon style={{ fontSize: 36 }} />,
-            color: '#2ECC71',
-        },
-    ];
-
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4 max-w-6xl">
@@ -163,7 +109,7 @@ const CarteiraEstudante: React.FC = () => {
                     >
                         Carteira do Estudante DNA do Brasil
                         <motion.div
-                            className="absolute -bottom-2 left-0 right-0 mx-auto h-1 bg-[color:var(--color-primary)]"
+                            className="absolute -bottom-2 left-0 right-0 mx-auto h-1 bg-[#134074]"
                             initial={{ width: 0 }}
                             whileInView={{ width: '80%' }}
                             viewport={{ once: true }}
@@ -189,7 +135,7 @@ const CarteiraEstudante: React.FC = () => {
                     <div className="relative max-w-full mx-auto flex justify-center">
                         {/* Botão de alternância */}
                         <motion.button
-                            className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-[color:var(--color-primary)] text-white w-10 h-10 md:w-12 md:h-12 rounded-full shadow-lg flex items-center justify-center cursor-pointer"
+                            className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-[#134074] text-white w-10 h-10 md:w-12 md:h-12 rounded-full shadow-lg flex items-center justify-center cursor-pointer"
                             onClick={flipCard}
                             title={showFront ? 'Ver verso da carteira' : 'Ver frente da carteira'}
                             disabled={isFlipping}
@@ -205,13 +151,11 @@ const CarteiraEstudante: React.FC = () => {
                         <div className="perspective-1000">
                             <div
                                 ref={cardRef}
-                                className={`relative preserve-3d mx-auto card-container ${
-                                    isFlipping ? 'flipping' : ''
-                                }`}
+                                className="relative preserve-3d mx-auto card-container"
                                 style={
                                     {
-                                        width: '408px', // Tamanho aumentado
-                                        height: '260px', // Tamanho aumentado
+                                        width: '408px',
+                                        height: '260px',
                                         transformStyle: 'preserve-3d',
                                     } as React.CSSProperties
                                 }
@@ -220,95 +164,71 @@ const CarteiraEstudante: React.FC = () => {
                                 onMouseLeave={handleMouseLeave}
                             >
                                 {/* Frente da carteira */}
-                                <div className={`backface-hidden rounded-xl shadow-xl overflow-hidden card-flip-front`}>
+                                <div
+                                    className="backface-hidden rounded-xl shadow-xl overflow-hidden absolute w-full h-full"
+                                    style={
+                                        {
+                                            backfaceVisibility: 'hidden',
+                                            transform: 'rotateY(0deg)',
+                                        } as React.CSSProperties
+                                    }
+                                >
                                     <img
                                         src="/images/carteirinha/frente.png"
                                         alt="Frente da Carteira do Estudante DNA do Brasil"
                                         className="w-full h-full object-cover"
                                         draggable="false"
                                     />
-                                    <div className="card-shine"></div>
+                                    <div
+                                        className="card-shine absolute inset-0 pointer-events-none"
+                                        style={{
+                                            background:
+                                                'linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 80%)',
+                                        }}
+                                    ></div>
                                 </div>
 
                                 {/* Verso da carteira */}
-                                <div className={`backface-hidden rounded-xl shadow-xl overflow-hidden card-flip-back`}>
+                                <div
+                                    className="backface-hidden rounded-xl shadow-xl overflow-hidden absolute w-full h-full"
+                                    style={
+                                        {
+                                            backfaceVisibility: 'hidden',
+                                            transform: 'rotateY(180deg)',
+                                        } as React.CSSProperties
+                                    }
+                                >
                                     <img
                                         src="/images/carteirinha/verso.png"
                                         alt="Verso da Carteira do Estudante DNA do Brasil"
                                         className="w-full h-full object-cover"
                                         draggable="false"
                                     />
-                                    <div className="card-shine"></div>
+                                    <div
+                                        className="card-shine absolute inset-0 pointer-events-none"
+                                        style={{
+                                            background:
+                                                'linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 80%)',
+                                        }}
+                                    ></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* CTA Button */}
-                <motion.div
-                    className="text-center my-16"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                <motion.p
+                    className="text-center text-sm text-gray-500 italic"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
+                    transition={{ delay: 0.4 }}
                 >
-                    <Link to="/carteira-estudante">
-                        <motion.button
-                            className="bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-dark)] text-white font-bold py-4 px-8 rounded-full text-lg md:text-xl shadow-lg flex items-center justify-center mx-auto group relative overflow-hidden hover:cursor-pointer"
-                            whileHover={{
-                                scale: 1.05,
-                                boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
-                            }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <span className="relative z-10">Solicite sua carteira agora</span>
-                            <motion.div
-                                className="absolute right-6 flex items-center"
-                                initial={{ x: -5 }}
-                                whileHover={{ x: 0 }}
-                            >
-                            </motion.div>
-                            <motion.div
-                                className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                                style={{ borderRadius: '9999px' }}
-                            />
-                        </motion.button>
-                    </Link>
-                </motion.div>
-
-                {/* Cards de benefícios */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    {benefitCards.map((card) => (
-                        <motion.div
-                            key={card.id}
-                            variants={itemVariants}
-                            className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl benefit-card"
-                        >
-                            <div className="h-2" style={{ backgroundColor: card.color }}></div>
-                            <div className="p-6">
-                                <div
-                                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 benefit-card-icon"
-                                    style={{ backgroundColor: `${card.color}15` }} // Cor com 15% de opacidade
-                                >
-                                    <div style={{ color: card.color }}>{card.icon}</div>
-                                </div>
-
-                                <h3 className="font-bold text-xl text-center mb-3">{card.title}</h3>
-                                <p className="text-gray-600 text-center">{card.description}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                    Clique na carteira ou use o botão acima para virá-la
+                </motion.p>
             </div>
         </section>
     );
 };
 
-export default CarteiraEstudante;
+export default CarteiraInterativa;

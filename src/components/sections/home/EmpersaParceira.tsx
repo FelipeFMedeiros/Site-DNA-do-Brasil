@@ -86,7 +86,7 @@ const EmpresaParceira: React.FC = () => {
                                 className="relative overflow-hidden inline-block"
                             >
                                 <Link
-                                    to="#"
+                                    to="/empresa-parceira"
                                     className="relative inline-flex items-center justify-center px-8 py-3 bg-[color:var(--color-primary)] text-white rounded-md font-medium shadow-md group overflow-hidden"
                                     style={{ isolation: 'isolate' }}
                                 >
