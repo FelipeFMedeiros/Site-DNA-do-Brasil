@@ -4,7 +4,7 @@ import Section1OQueE from '@components/sections/QuemSomos/OQueE';
 import Section2ComoFunciona from '@components/sections/QuemSomos/ComoFunciona';
 import Section3OQueOferecemos from '@components/sections/QuemSomos/OQueOferecemos';
 import DimensoesInfographic from '@components/sections/QuemSomos/DimensoesInfoGrafico';
-import ScrollToTop from '@/components/ScrollToTop';
+import ScrollToTop from '@hooks/ScrollToTop';
 
 const QuemSomos: React.FC = () => {
     return (

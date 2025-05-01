@@ -10,7 +10,7 @@ import EmpresaParceira from '@/components/sections/Home/EmpersaParceira';
 import EspecialistaDnaBrasil from '@/components/sections/Home/EspecialistaDnaBrasil';
 import ResultadosImpactos from '@/components/sections/Home/ResultadosImpactos';
 import BeneficiosTalento from '@/components/sections/Home/BeneficiosTalento';
-import ScrollToTop from '@/components/ScrollToTop';
+import ScrollToTop from '@hooks/ScrollToTop';
 
 const Home: React.FC = () => {
     return (
