@@ -8,6 +8,7 @@ import PlataformaDnaBrasil from '@components/sections/home/PlataformaDnaBrasil';
 import CarteiraEstudante from '@components/sections/home/CarteiraEstudante';
 import EmpresaParceira from '@components/sections/home/EmpersaParceira';
 import EspecialistaDnaBrasil from '@components/sections/home/EspecialistaDnaBrasil';
+import ResultadosImpactos from '@components/sections/home/ResultadosImpactos';
 
 const Home: React.FC = () => {
     return (
@@ -32,6 +33,9 @@ const Home: React.FC = () => {
 
             {/* Seja um Especialista DNA do Brasil */}
             <EspecialistaDnaBrasil />
+
+            {/* Resultados e Impactos */}
+            <ResultadosImpactos />
         </div>
     );
 };
