@@ -9,7 +9,7 @@ import NiveisAprendizagem from '@/components/sections/Metodologia/NiveisAprendiz
 
 const Metodologia: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 overflow-x-hidden">
             {/* Hero Section */}
             <motion.div
                 className="relative bg-gradient-to-r from-[#0B2545] to-[#134074] text-white py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"

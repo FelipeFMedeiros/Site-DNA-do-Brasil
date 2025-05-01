@@ -185,7 +185,7 @@ const PlataformaDnaBrasil: React.FC = () => {
                             className="relative overflow-hidden inline-block"
                         >
                             <Link
-                                to="#"
+                                to="/plataforma"
                                 className="relative inline-block px-8 py-3 bg-[color:var(--color-primary)] text-white rounded-md font-medium shadow-md transition-all duration-300 z-10 overflow-hidden group"
                             >
                                 <span className="relative z-10 flex items-center justify-center transition-all duration-300">

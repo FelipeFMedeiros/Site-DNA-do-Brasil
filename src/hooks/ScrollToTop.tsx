@@ -40,7 +40,7 @@ const ScrollToTop: React.FC<ScrollToTopProps> = ({ showAtHeight = 300 }) => {
             {isVisible && (
                 <motion.button
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 w-12 h-12 bg-blue-800 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-950 transition-colors duration-200 hover:cursor-pointer"
+                    className="fixed bottom-8 right-8 w-12 h-12 bg-blue-800 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-950 transition-colors duration-200 hover:cursor-pointer z-50"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
