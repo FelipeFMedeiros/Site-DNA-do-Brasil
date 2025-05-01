@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import MobileMenu from './MobileMenu';
 
-const Header = () => {
+const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProgramOpen, setIsProgramOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -70,7 +70,7 @@ const Header = () => {
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
                         <Link to="/" className="flex items-center">
-                            <img src="/images/logos/logo.png" alt="DNA do Brasil" className="h-10" />
+                            <img src="/images/logos/logo-dna.png" alt="DNA do Brasil" className="h-10" />
                         </Link>
 
                         {/* Menu desktop */}
@@ -276,4 +276,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Menu;

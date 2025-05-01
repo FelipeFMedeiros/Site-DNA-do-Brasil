@@ -1,0 +1,72 @@
+/* especialista-dna.css */
+
+/* Estilo adicional para melhorar o efeito de parallax */
+.parallax-container {
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax-content {
+    position: relative;
+    min-height: 90vh;
+    transform: translateZ(0);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para o botão principal */
+.cta-button {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeitos para os cards de informação */
+.info-card {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Melhorias para dispositivos móveis */
+@media (max-width: 768px) {
+    .parallax-bg {
+        /* Desativamos o efeito em celulares para melhor performance */
+        transform: none;
+        position: fixed;
+    }
+
+    .info-card {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+}

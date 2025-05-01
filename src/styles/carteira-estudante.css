@@ -1,0 +1,100 @@
+/* Estilos para o efeito 3D da carteira */
+.perspective-1000 {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .backface-hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Animação específica para o flip */
+  .card-flip-front {
+    transform: rotateY(0deg);
+  }
+  
+  .card-flip-back {
+    transform: rotateY(180deg);
+  }
+  
+  /* Efeito de rotação quando passa o mouse sobre a carteira */
+  .card-container {
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+  
+  /* Efeito de brilho na carteira */
+  .card-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Para não interferir com os cliques */
+  }
+  
+  .card-container:hover .card-shine {
+    opacity: 1;
+  }
+  
+  /* Estilos para cards de benefícios */
+  .benefit-card-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .benefit-card:hover .benefit-card-icon {
+    transform: scale(1.2);
+  }
+  
+  /* Animação de giro para dar um efeito extra */
+  @keyframes flipEffect {
+    0% {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .flipping {
+    animation: flipEffect 0.6s ease-out;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .card-container {
+      width: 300px !important;
+      height: 190px !important;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-container {
+      width: 260px !important;
+      height: 165px !important;
+    }
+  }

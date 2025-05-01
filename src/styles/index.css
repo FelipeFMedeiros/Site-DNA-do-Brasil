@@ -26,3 +26,30 @@ body {
     --z-overlay: 60;
     --z-sidebar: 70;
 }
+
+
+@keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+  
+  .animate-slide {
+    animation: slide 20s linear infinite;
+  }
