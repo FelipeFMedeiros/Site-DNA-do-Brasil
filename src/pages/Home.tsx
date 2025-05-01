@@ -1,15 +1,16 @@
 import React from 'react';
 
 // Importação dos componentes
-import HeroCarousel from '@components/sections/home/HeroCarousel';
-import ProgramaDnaBrasil from '@components/sections/home/ProgramaDnaBrasil';
-import NossaMetodologia from '@components/sections/home/NossaMetodologia';
-import PlataformaDnaBrasil from '@components/sections/home/PlataformaDnaBrasil';
-import CarteiraEstudante from '@components/sections/home/CarteiraEstudante';
-import EmpresaParceira from '@components/sections/home/EmpersaParceira';
-import EspecialistaDnaBrasil from '@components/sections/home/EspecialistaDnaBrasil';
-import ResultadosImpactos from '@components/sections/home/ResultadosImpactos';
-import BeneficiosTalento from '@components/sections/home/BeneficiosTalento';
+import HeroCarousel from '@/components/sections/Home/HeroCarousel';
+import ProgramaDnaBrasil from '@/components/sections/Home/ProgramaDnaBrasil';
+import NossaMetodologia from '@/components/sections/Home/NossaMetodologia';
+import PlataformaDnaBrasil from '@/components/sections/Home/PlataformaDnaBrasil';
+import CarteiraEstudante from '@/components/sections/Home/CarteiraEstudante';
+import EmpresaParceira from '@/components/sections/Home/EmpersaParceira';
+import EspecialistaDnaBrasil from '@/components/sections/Home/EspecialistaDnaBrasil';
+import ResultadosImpactos from '@/components/sections/Home/ResultadosImpactos';
+import BeneficiosTalento from '@/components/sections/Home/BeneficiosTalento';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Home: React.FC = () => {
     return (
@@ -40,6 +41,9 @@ const Home: React.FC = () => {
 
             {/* Benefícios de ser um talento DNA do Brasil */}
             <BeneficiosTalento />
+
+            {/* Botão de voltar ao topo */}
+            <ScrollToTop showAtHeight={500} />
         </div>
     );
 };
