@@ -91,7 +91,7 @@ const NossaMetodologia: React.FC = () => {
     },
     {
       id: 3,
-      titulo: '5 Dimensões de Análise',
+      titulo: '6 Dimensões de Análise',
       descricao: 'Uma abordagem completa que contempla todos os aspectos do desenvolvimento.',
       icone: <BarChartIcon style={{ fontSize: 36 }} />,
     }

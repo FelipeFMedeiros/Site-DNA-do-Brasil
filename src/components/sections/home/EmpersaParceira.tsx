@@ -133,7 +133,7 @@ const EmpresaParceira: React.FC = () => {
                     >
                         <div className="rounded-lg overflow-hidden shadow-xl">
                             <img
-                                src="/images/empersaparceira.png"
+                                src="/images/programa-dna/empersaparceira.webp"
                                 alt="Empresa e escola conectadas por uma ponte"
                                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                             />
