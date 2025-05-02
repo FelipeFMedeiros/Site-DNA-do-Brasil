@@ -12,7 +12,7 @@ export default defineConfig({
     plugins: [react(), tailwindcss()],
     server: {
         port: 5174,
-        host: '192.168.1.128',
+        //host: '192.168.1.128',
     },
     resolve: {
         alias: {
