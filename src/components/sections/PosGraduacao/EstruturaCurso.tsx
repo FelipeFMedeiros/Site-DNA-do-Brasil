@@ -237,7 +237,7 @@ const EstruturaCurso: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
                             <img
-                                src="/images/pos-graduacao/plataforma-preview.webp"
+                                src="/images/pos-graduacao/plataforma.png"
                                 alt="Preview da plataforma EAD"
                                 className="w-full rounded-xl shadow-xl"
                             />
