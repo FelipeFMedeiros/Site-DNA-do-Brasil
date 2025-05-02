@@ -12,7 +12,7 @@ import '@styles/empresa-parceira.css';
 
 const EmpresaParceira: React.FC = () => {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen overflow-x-hidden">
             {/* Hero Section com efeito parallax */}
             <HeroSection />
 
