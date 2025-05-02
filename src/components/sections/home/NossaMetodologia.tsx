@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Importação dos ícones do MUI
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import RouteIcon from '@mui/icons-material/Route';
-import GroupsIcon from '@mui/icons-material/Groups';
-import DiversityIcon from '@mui/icons-material/Diversity3';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import StarIcon from '@mui/icons-material/Star';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import DataUsageIcon from '@mui/icons-material/DataUsage';
@@ -37,38 +38,40 @@ const NossaMetodologia: React.FC = () => {
   const dimensoes = [
     {
       id: 1,
-      titulo: 'Análise Técnica',
+      titulo: 'Saúde',
       descricao: 'Avaliação de habilidades específicas e métricas de desempenho individual.',
-      icone: <AssessmentIcon style={{ fontSize: 40 }} />,
-      cor: '#4A6DA7'
+      icone: <FavoriteIcon style={{ fontSize: 40 }} />,
+      cor: '#D2322D'
     },
     {
       id: 2,
-      titulo: 'Perfil Comportamental',
-      descricao: 'Identificação de aptidões e características de personalidade.',
-      icone: <PsychologyIcon style={{ fontSize: 40 }} />,
-      cor: '#D86C70'
+      titulo: 'Talento Esportivo',
+      icone: <EmojiEventsIcon style={{ fontSize: 40 }} />,
+      cor: '#ED9C28'
     },
     {
       id: 3,
-      titulo: 'Trajetória de Desenvolvimento',
-      descricao: 'Planejamento personalizado de evolução acadêmica e esportiva.',
-      icone: <RouteIcon style={{ fontSize: 40 }} />,
-      cor: '#50B681'
+      titulo: 'Consumo Alimentar',
+      icone: <RestaurantIcon style={{ fontSize: 40 }} />,
+      cor: '#47A447'
     },
     {
       id: 4,
-      titulo: 'Contexto Familiar',
-      descricao: 'Compreensão do ambiente e suporte disponível para o aluno.',
-      icone: <GroupsIcon style={{ fontSize: 40 }} />,
-      cor: '#F7B844'
+      titulo: 'Saúde Bucal',
+      icone: <MedicalServicesIcon style={{ fontSize: 40 }} />,
+      cor: '#5BC0DE'
     },
     {
       id: 5,
-      titulo: 'Interação Social',
-      descricao: 'Observação das relações interpessoais e trabalho em equipe.',
-      icone: <DiversityIcon style={{ fontSize: 40 }} />,
-      cor: '#9868D3'
+      titulo: 'Qualidade de Vida',
+      icone: <ThumbUpIcon style={{ fontSize: 40 }} />,
+      cor: '#00A4A9'
+    },
+    {
+      id: 6,
+      titulo: 'Vocacional',
+      icone: <StarIcon style={{ fontSize: 40 }} />,
+      cor: '#9C27B0'
     }
   ];
 
@@ -88,7 +91,7 @@ const NossaMetodologia: React.FC = () => {
     },
     {
       id: 3,
-      titulo: '5 Dimensões de Análise',
+      titulo: '6 Dimensões de Análise',
       descricao: 'Uma abordagem completa que contempla todos os aspectos do desenvolvimento.',
       icone: <BarChartIcon style={{ fontSize: 36 }} />,
     }
@@ -150,7 +153,7 @@ const NossaMetodologia: React.FC = () => {
               className="relative overflow-hidden inline-block"
             >
               <Link 
-                to="#" 
+                to="/metodologia" 
                 className="relative inline-flex items-center justify-center px-8 py-3 bg-[color:var(--color-primary)] text-white rounded-md font-medium shadow-md group overflow-hidden"
                 style={{ isolation: 'isolate' }}
               >

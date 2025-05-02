@@ -1,16 +1,18 @@
 import { Outlet } from 'react-router-dom';
 import Menu from '@components/layout/Menu';
 import Footer from '@components/layout/Footer';
+import ScrollRestoration from '@hooks/ScrollRestoration';
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <ScrollRestoration />
       <Menu />
-      <main className="flex-grow pt-20">
+      <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -86,7 +86,7 @@ const EmpresaParceira: React.FC = () => {
                                 className="relative overflow-hidden inline-block"
                             >
                                 <Link
-                                    to="#"
+                                    to="/empresa-parceira"
                                     className="relative inline-flex items-center justify-center px-8 py-3 bg-[color:var(--color-primary)] text-white rounded-md font-medium shadow-md group overflow-hidden"
                                     style={{ isolation: 'isolate' }}
                                 >
@@ -133,7 +133,7 @@ const EmpresaParceira: React.FC = () => {
                     >
                         <div className="rounded-lg overflow-hidden shadow-xl">
                             <img
-                                src="/images/empersaparceira.png"
+                                src="/images/programa-dna/empersaparceira.webp"
                                 alt="Empresa e escola conectadas por uma ponte"
                                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                             />

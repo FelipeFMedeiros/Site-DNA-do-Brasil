@@ -11,7 +11,7 @@ const EspecialistaDnaBrasil: React.FC = () => {
         <section className="relative min-h-screen flex items-center">
         {/* Parallax background usando Tailwind */}
         <div
-            className="absolute inset-0 bg-[url('/images/profissionais-bg.jpg')] bg-cover bg-center bg-fixed"
+            className="absolute inset-0 bg-[url('/images/background-images/profissionais-bg.webp')] bg-cover bg-center bg-fixed"
             aria-hidden="true"
         />
         {/* Overlay para legibilidade */}
