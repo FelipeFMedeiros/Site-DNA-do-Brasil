@@ -102,13 +102,13 @@ const CTASection: React.FC = () => {
                             </motion.a>
 
                             <motion.a
-                                href="mailto:contato@dnadobrasil.com.br?subject=Informações%20sobre%20Pós-Graduação"
+                                href="/contato"
                                 className="bg-white text-[#0B2545] px-8 py-4 rounded-lg font-semibold text-lg shadow-lg flex items-center justify-center transition-colors duration-300"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <MailOutlineIcon className="mr-2" />
-                                Enviar e-mail
+                                Entrar em contato
                             </motion.a>
                         </div>
                     </motion.div>

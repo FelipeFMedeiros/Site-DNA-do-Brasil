@@ -9,23 +9,25 @@ import PlataformaDna from './pages/PlataformaDna';
 import CarteiraEstudante from './pages/CarteiraEstudante';
 import EmpresaParceira from './pages/EmpresaParceira';
 import PosGraduacao from './pages/PosGraduacao';
+import Contato from './pages/Contato';
 import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'quem-somos', element: <QuemSomos /> },
-      { path: 'metodologia', element: <Metodologia /> },
-      { path: 'plataforma', element: <PlataformaDna /> },
-      { path: 'carteira-estudante', element: <CarteiraEstudante /> },
-      { path: 'empresa-parceira', element: <EmpresaParceira /> },
-      { path: 'pos-graduacao', element: <PosGraduacao /> },
-    ],
-  },
-  { path: '*', element: <NotFound /> },
+    {
+        path: '/',
+        element: <App />,
+        children: [
+            { index: true, element: <Home /> },
+            { path: 'quem-somos', element: <QuemSomos /> },
+            { path: 'metodologia', element: <Metodologia /> },
+            { path: 'plataforma', element: <PlataformaDna /> },
+            { path: 'carteira-estudante', element: <CarteiraEstudante /> },
+            { path: 'empresa-parceira', element: <EmpresaParceira /> },
+            { path: 'pos-graduacao', element: <PosGraduacao /> },
+            { path: 'contato', element: <Contato /> },
+        ],
+    },
+    { path: '*', element: <NotFound /> },
 ]);
 
 export default router;

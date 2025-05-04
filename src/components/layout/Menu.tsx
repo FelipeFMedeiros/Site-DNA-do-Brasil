@@ -6,12 +6,21 @@ const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProgramOpen, setIsProgramOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
+    const programButtonRef = useRef<HTMLDivElement | null>(null);
     const location = useLocation();
+
+    // Timer para evitar que o menu feche imediatamente
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     // Fechar o menu quando clicar fora dele
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node) &&
+                programButtonRef.current &&
+                !programButtonRef.current.contains(event.target as Node)
+            ) {
                 setIsProgramOpen(false);
             }
         };
@@ -40,6 +49,15 @@ const Menu = () => {
         };
     }, [isMenuOpen]);
 
+    // Limpar timeout ao desmontar o componente
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
+
     // Verificar se o link está ativo
     const isActive = (path: string) => {
         return location.pathname === path;
@@ -63,6 +81,29 @@ const Menu = () => {
         setIsProgramOpen(!isProgramOpen);
     };
 
+    const handleProgramMouseEnter = () => {
+        // Limpa qualquer timeout existente
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
+        setIsProgramOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => {
+            setIsProgramOpen(false);
+        }, 150);
+    };
+
+    // Função para cancelar o fechamento quando o mouse entra novamente
+    const handleCancelClose = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
+    };
+
     return (
         <>
             <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
@@ -75,7 +116,12 @@ const Menu = () => {
 
                         {/* Menu desktop */}
                         <nav className="hidden lg:flex items-center space-x-8">
-                            <div className="relative group" ref={dropdownRef}>
+                            <div
+                                className="relative group"
+                                ref={programButtonRef}
+                                onMouseEnter={handleProgramMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
                                 <button
                                     className={`flex items-center space-x-2 font-medium transition-colors duration-300 pb-2 border-b-2 ${
                                         isProgramActive()
@@ -83,7 +129,6 @@ const Menu = () => {
                                             : 'text-gray-800 hover:text-[color:var(--color-primary)] border-transparent hover:border-[color:var(--color-primary-light)]'
                                     }`}
                                     onClick={toggleProgram}
-                                    onMouseEnter={() => setIsProgramOpen(true)}
                                 >
                                     <span>O Programa</span>
                                     <svg
@@ -106,46 +151,52 @@ const Menu = () => {
 
                                 {/* Dropdown submenu com transição suave */}
                                 <div
-                                    className={`absolute left-0 mt-2 w-64 bg-white rounded-md py-1 shadow-lg z-50 transform transition-all duration-300 origin-top-left
-                    ${isProgramOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-                                    onMouseLeave={() => setIsProgramOpen(false)}
+                                    ref={dropdownRef}
+                                    className={`absolute left-0 mt-1 w-64 bg-white rounded-md py-1 shadow-lg z-50 transform transition-all duration-300 origin-top-left
+                                        ${
+                                            isProgramOpen
+                                                ? 'opacity-100 scale-100'
+                                                : 'opacity-0 scale-95 pointer-events-none'
+                                        }`}
+                                    onMouseEnter={handleCancelClose}
+                                    onMouseLeave={handleMouseLeave}
                                 >
                                     <Link
                                         to="/quem-somos"
-                                        className={`block px-4 py-3 hover:bg-gray-50 ${
+                                        className={`block px-4 py-3 transition-all duration-200 ${
                                             isActive('/quem-somos')
                                                 ? 'text-[color:var(--color-primary)] font-medium bg-gray-50 border-l-4 border-[color:var(--color-primary)]'
-                                                : 'text-gray-800 border-l-4 border-transparent'
+                                                : 'text-gray-800 border-l-4 border-transparent hover:text-[color:var(--color-primary)] hover:bg-gray-50 hover:border-l-4 hover:border-[color:var(--color-primary-light)]'
                                         }`}
                                     >
                                         Quem Somos
                                     </Link>
                                     <Link
                                         to="/metodologia"
-                                        className={`block px-4 py-3 hover:bg-gray-50 ${
+                                        className={`block px-4 py-3 transition-all duration-200 ${
                                             isActive('/metodologia')
                                                 ? 'text-[color:var(--color-primary)] font-medium bg-gray-50 border-l-4 border-[color:var(--color-primary)]'
-                                                : 'text-gray-800 border-l-4 border-transparent'
+                                                : 'text-gray-800 border-l-4 border-transparent hover:text-[color:var(--color-primary)] hover:bg-gray-50 hover:border-l-4 hover:border-[color:var(--color-primary-light)]'
                                         }`}
                                     >
                                         Metodologia
                                     </Link>
                                     <Link
                                         to="/plataforma"
-                                        className={`block px-4 py-3 hover:bg-gray-50 ${
+                                        className={`block px-4 py-3 transition-all duration-200 ${
                                             isActive('/plataforma')
                                                 ? 'text-[color:var(--color-primary)] font-medium bg-gray-50 border-l-4 border-[color:var(--color-primary)]'
-                                                : 'text-gray-800 border-l-4 border-transparent'
+                                                : 'text-gray-800 border-l-4 border-transparent hover:text-[color:var(--color-primary)] hover:bg-gray-50 hover:border-l-4 hover:border-[color:var(--color-primary-light)]'
                                         }`}
                                     >
                                         Plataforma DNA do Brasil
                                     </Link>
                                     <Link
                                         to="/carteira-estudante"
-                                        className={`block px-4 py-3 hover:bg-gray-50 ${
+                                        className={`block px-4 py-3 transition-all duration-200 ${
                                             isActive('/carteira-estudante')
                                                 ? 'text-[color:var(--color-primary)] font-medium bg-gray-50 border-l-4 border-[color:var(--color-primary)]'
-                                                : 'text-gray-800 border-l-4 border-transparent'
+                                                : 'text-gray-800 border-l-4 border-transparent hover:text-[color:var(--color-primary)] hover:bg-gray-50 hover:border-l-4 hover:border-[color:var(--color-primary-light)]'
                                         }`}
                                     >
                                         Carteira do Estudante
@@ -267,11 +318,7 @@ const Menu = () => {
             </header>
 
             {/* Renderizar o componente MobileMenu */}
-            <MobileMenu
-                isMenuOpen={isMenuOpen}
-                toggleMenu={toggleMenu}
-                isActive={isActive}
-            />
+            <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} isActive={isActive} />
         </>
     );
 };
