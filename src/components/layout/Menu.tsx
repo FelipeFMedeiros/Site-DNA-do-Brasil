@@ -256,23 +256,23 @@ const Menu = () => {
 
                         {/* Botão Entrar - Desktop */}
                         <div className="hidden lg:flex items-center">
-                            <Link
-                                to="/Identity/Account/Login"
+                            <a
+                                href="/Identity/Account/Login"
                                 className="group relative overflow-hidden bg-[color:var(--color-primary)] text-white px-6 py-2 rounded-md font-medium hover:bg-[color:var(--color-primary-dark)] transition-all duration-300 mr-2"
                             >
                                 <span className="relative z-10">ENTRAR</span>
                                 <div className="absolute bottom-0 left-1/2 w-0 h-1 bg-white transform -translate-x-1/2 group-hover:w-11/12 transition-all duration-300 ease-out"></div>
-                            </Link>
+                            </a>
                         </div>
 
                         {/* Botão do menu mobile */}
                         <div className="lg:hidden flex items-center">
-                            <Link
-                                to="/login"
+                            <a
+                                href="/Identity/Account/Login"
                                 className="mr-4 bg-[color:var(--color-primary)] text-white px-4 py-1.5 rounded-md text-sm font-medium hover:bg-[color:var(--color-primary-dark)] transition-colors duration-300"
                             >
                                 ENTRAR
-                            </Link>
+                            </a>
 
                             <button
                                 className="lg:hidden p-2 text-gray-800 hover:text-[color:var(--color-primary)] transition-colors z-50 relative"
