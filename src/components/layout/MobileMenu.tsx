@@ -213,7 +213,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu, isActiv
 
                 <div className="p-4 border-t border-gray-200">
                     <Link
-                        to="/login"
+                        to="/Identity/Account/Login"
                         className="group relative overflow-hidden flex items-center justify-center w-full px-4 py-3 text-white bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-dark)] transition-colors font-medium rounded-lg"
                     >
                         <span className="relative z-10">ENTRAR</span>

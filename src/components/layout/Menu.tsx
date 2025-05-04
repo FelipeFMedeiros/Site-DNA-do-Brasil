@@ -257,7 +257,7 @@ const Menu = () => {
                         {/* Botão Entrar - Desktop */}
                         <div className="hidden lg:flex items-center">
                             <Link
-                                to="/login"
+                                to="/Identity/Account/Login"
                                 className="group relative overflow-hidden bg-[color:var(--color-primary)] text-white px-6 py-2 rounded-md font-medium hover:bg-[color:var(--color-primary-dark)] transition-all duration-300 mr-2"
                             >
                                 <span className="relative z-10">ENTRAR</span>
