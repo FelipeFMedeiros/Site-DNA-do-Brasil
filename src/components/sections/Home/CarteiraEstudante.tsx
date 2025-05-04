@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'
 
 // Importação dos ícones do MUI
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
@@ -253,7 +252,7 @@ const CarteiraEstudante: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                    <Link to="/carteira-estudante">
+                    <a href="/Identity/Account/Register">
                         <motion.button
                             className="bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-dark)] text-white font-bold py-4 px-8 rounded-full text-lg md:text-xl shadow-lg flex items-center justify-center mx-auto group relative overflow-hidden hover:cursor-pointer"
                             whileHover={{
@@ -274,7 +273,7 @@ const CarteiraEstudante: React.FC = () => {
                                 style={{ borderRadius: '9999px' }}
                             />
                         </motion.button>
-                    </Link>
+                    </a>
                 </motion.div>
 
                 {/* Cards de benefícios */}
