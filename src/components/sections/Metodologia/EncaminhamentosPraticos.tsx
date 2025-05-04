@@ -242,13 +242,14 @@ const EncaminhamentosPraticos: React.FC = () => {
                         Nossa metodologia não apenas identifica talentos e potenciais, mas oferece caminhos concretos
                         para que cada estudante possa se desenvolver de forma integral
                     </p>
-                    <motion.button
+                    <motion.a
                         className="px-8 py-3 bg-[#134074] text-white rounded-lg text-lg font-medium shadow-md hover:bg-[#0B2545] transition duration-200 hover:cursor-pointer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
+                        href="/plataforma"
                     >
-                        Saiba mais sobre nossos resultados
-                    </motion.button>
+                        Conheça a Plataforma DNA
+                    </motion.a>
                 </motion.div>
             </div>
         </section>

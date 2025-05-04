@@ -130,7 +130,7 @@ const CarteiraEstudante: React.FC = () => {
                                     whileTap={{ scale: 0.98 }}
                                 >
                                     <a
-                                        href="/programa-dna"
+                                        href="/metodologia"
                                         className="px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg text-lg font-medium hover:bg-white hover:text-[#134074] transition duration-200 hover:cursor-pointer inline-block"
                                     >
                                         Conhecer o programa
