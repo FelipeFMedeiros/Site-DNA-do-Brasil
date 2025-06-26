@@ -17,7 +17,7 @@ export const heroSlides: HeroSlideTypes[] = [
         title: 'EMPRESA PARCEIRA DA ESCOLA',
         description:
             'Enriqueça os Recursos Humanos do seu negócio, monitore políticas públicas, renove a base esportiva.',
-        backgroundImage: '/images/hero-carousel/1.webp',
+        backgroundImage: '/images/hero-carousel/1-novo.webp',
         layout: 'left-text',
         buttonText: 'SAIBA MAIS',
         buttonLink: '/empresa-parceira',
